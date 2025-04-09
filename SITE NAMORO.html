@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ANOR DA MINHA VIDA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Verdana', sans-serif;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    header {
+      background: lch(50.27% 79.33 10.15);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 30px auto;
+      max-width: 800px;
+      font-size: 1.1em;
+      padding: 0 20px;
+    }
+
+    .carousel-container {
+      position: relative;
+      max-width: 400px;
+      margin: 40px auto;
+    }
+
+    .carousel-slide {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    
+
+    .next {
+      right: 2;
+      border-radius: 10px 0 0 7px;
+    }
+
+    .frase-animada {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.3em;
+      color: lab(42.27% 67.4 23.72);
+      margin: 30px 20px;
+      min-height: 40px;
+    }
+
+    .video {
+      text-align: center;
+      margin: 50px auto;
+    }
+
+    footer {
+      background: lab(42.27% 67.4 23.72);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+ 
+
+  <header>
+    <h1>❤️ AMOR DA MINHA VIDA ❤️</h1>
+    <p>Te amo não só pelo que você é, mas por quem eu sou quando estou com você.</p>
+  </header>
+  <h2>CLIQUE AQUI PRIMEIRO !</h2>
+    
+  <audio id="meuAudio" controls>
+    <source src="ali-gatie-it-s-you-traducao-legendado_ZfxjgNuH.mp3" type="audio/mpeg">
+    Seu navegador não suporta a reprodução de áudio.
+  </audio>
+
+  
+  <div class="intro">
+    <p>
+        Amor,
+        Eu só queria te lembrar o quanto eu te amo. Você é a melhor parte dos meus dias, meu refúgio, minha paz e, ao mesmo tempo, minha maior aventura. Estar ao seu lado me faz acreditar que tudo vale a pena. O teu sorriso ilumina tudo ao meu redor, e o teu jeito me conquista mais a cada dia.
+        Te amo com todas as forças do meu coração, e quero seguir te amando assim, com intensidade, carinho, por muito, muito tempo.</p>
+  </div>
+
+  <div class="carousel-container">
+    <img class="carousel-slide" src="c:\Users\EDI\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20250408-WA0015.jpg" alt="Slide 1">
+    <img class="carousel-slide" src="c:\Users\EDI\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20250408-WA0015.jpg" alt="Slide 2">
+    <img class="carousel-slide" src="c:\Users\EDI\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\IMG-20250408-WA0019.jpg" alt="Slide 3">
+
+    <a class="prev" onclick="mudarSlide(-1)">&#10094;</a>
+    <a class="next" onclick="mudarSlide(1)">&#10095;</a>
+  </div>
+
+  <div class="frase-animada" id="frase">
+    “O amor é a poesia dos sentidos.”
+  </div>
+
+  <div class="video">
+    <h2>💞 Veja o quanto TE AMO </h2>
+    <iframe width="560" height="315" src="Jorge & Mateus - Pra Sempre Com Você (Como Sempre Feito Nunca) [Vídeo Oficial].mp4" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <title>Player de Áudio</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin-top: 50px;
+        }
+        audio {
+          width: 300px;
+        }
+      </style>
+    </head>
+    <body>
+    
+      <h2>Ouça esse audio !</h2>
+    
+      <audio id="meuAudio" controls>
+        <source src="Áudio do WhatsApp de 2025-04-08 à(s) 16.17.45_01b00608.waptt.opus" type="audio/mpeg">
+        Seu navegador não suporta a reprodução de áudio.
+      </audio>
+    
+      <p>Clique em play para começar a ouvir 🎵</p>
+
+  <footer>
+    <p>&copy; AMOR DA MINHA VIDA </p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    let frases = [
+      "“O amor é a poesia dos sentidos.”",
+      "“A distância une mais corações do que separa.”",
+      "“Você é a página mais linda que o destino escreveu.”"
+    ];
+    let fraseAtual = 0;
+
+    function mostrarSlide(n) {
+      let slides = document.getElementsByClassName("carousel-slide");
+      if (n >= slides.length) slideIndex = 0;
+      if (n < 0) slideIndex = slides.length - 1;
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex].style.display = "block";
+    }
+
+    function mudarSlide(n) {
+      slideIndex += n;
+      mostrarSlide(slideIndex);
+    }
+
+    function trocarFrase() {
+      document.getElementById("frase").innerText = frases[fraseAtual];
+      fraseAtual = (fraseAtual + 1) % frases.length;
+    }
+
+    window.onload = () => {
+      mostrarSlide(slideIndex);
+      setInterval(() => {
+        slideIndex++;
+        mostrarSlide(slideIndex);
+      }, 4000);
+      trocarFrase();
+      setInterval(trocarFrase, 5000);
+    };
+  </script>
+
+</body>
+</html>
